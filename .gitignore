@@ -5,3 +5,4 @@ venv/
 *.swp
 
 node_modules/*
+server/templates/bundle.js
