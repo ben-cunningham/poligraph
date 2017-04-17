@@ -1,8 +1,9 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class Index extends React.Component {
   render() {
-    <h1> DC-Connect </h1>
+    return <h1> Connect-DC </h1>
   }
 }
 
