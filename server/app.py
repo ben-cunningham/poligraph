@@ -2,8 +2,8 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-@app.route('/api')
-def api():
+@app.route('/api/search')
+def search():
     if 'src' not in request.args:
         return 'src node not provided', 400
     if 'dest' not in request.args:
