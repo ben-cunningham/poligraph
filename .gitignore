@@ -1,5 +1,9 @@
 .DS_Store
 
+#python 
+
+__pycache__/
+
 # virtualenv
 venv/
 *.swp
