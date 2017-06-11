@@ -1,4 +1,7 @@
-from db import DatabaseManager
+from util.db import DatabaseManager
 
 class DatabaseUtil():
-    pass
+    
+    def get_edges(self, src):
+        edges = DatabaseManager().get_edges(src)
+        print(len(edges))

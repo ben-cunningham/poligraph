@@ -1,5 +1,7 @@
 from flask import Flask, request, render_template
 
+from util.search import Search
+
 app = Flask(__name__)
 
 @app.route('/api/search')
@@ -12,7 +14,8 @@ def search():
     src = request.args.get('src')
     dest = request.args.get('dest')
 
-
+    search = Search(src)
+    search.bfs(src)
 
     return 'Hello friends'
 
