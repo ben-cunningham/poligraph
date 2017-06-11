@@ -1,13 +1,8 @@
 from util.db_util import DatabaseUtil
+from util.node import Node
 
 class Search():
 
-    class Node():
-        
-        def __init__(self, id_):
-            self.id_ = id_
-            self.edges = []
-            
     def __init__(self, src):
          self.src = self.Node(src)
 
