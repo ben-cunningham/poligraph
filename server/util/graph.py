@@ -12,5 +12,11 @@ class Node():
 
 class Graph():
     
-    def __init__(self, id_):
+    def __init__(self):
         self.verticies = {}
+
+    def add_vertex(self, node):
+        self.verticies[node] = []
+
+    def add_connection(self, src, edge):
+        self.verticies[src].append(edge)
