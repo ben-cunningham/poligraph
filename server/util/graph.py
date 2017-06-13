@@ -18,5 +18,9 @@ class Graph():
     def add_vertex(self, node):
         self.verticies[node] = []
 
-    def add_connection(self, src, edge):
-        self.verticies[src].append(edge)
+    def add_connection(self, src, dest, text):
+        self.verticies[src].append(dest)
+        
+        if dest not in self.verticies:
+            self.verticies[dest] = []
+        self.verticies[dest].append(src)
