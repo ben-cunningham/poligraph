@@ -10,14 +10,21 @@ class Search():
 
     def bfs(self, dest):
          dest = Node(dest)
-         path = [self.src]
-         if self.src == dest:
-             return path
-
+         path = []
+         visited = set()
          queue = [self.src]
+         
          while len(queue) > 0:
              node = queue.pop(0)
-             self.get_edges(node)
+             if node == dest:
+                 path.append(node)
+                 return path
+
+             self.get_edges(node) # get the neighboring nodes from the database and populate graph
+             for v in self.g.get_adjacent_verticies(node)
+                 if v not in visited:
+                     queue.append(v)
+                     visited.add(v)
 
     def get_edges(self, node):
         edges = DatabaseUtil().get_edges(node, self.g)
