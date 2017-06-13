@@ -15,7 +15,8 @@ def search():
     dest = request.args.get('dest')
 
     search = Search(src)
-    search.bfs(src)
+    path = search.bfs(dest)
+    print(path)
 
     return 'Hello friends'
 
