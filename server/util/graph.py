@@ -10,6 +10,12 @@ class Node():
     def __eq__(self, other):
         return self.id_ == other.id_
 
+    def __str__(self):
+        return self.id_
+
+    def __repr__(self):
+        return self.__str__()
+
 class Graph():
     
     def __init__(self):
