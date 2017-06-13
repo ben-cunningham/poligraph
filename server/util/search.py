@@ -21,7 +21,7 @@ class Search():
                  return path
 
              self.get_edges(node) # get the neighboring nodes from the database and populate graph
-             for v in self.g.get_adjacent_verticies(node)
+             for v in self.g.get_adjacent_verticies(node):
                  if v not in visited:
                      queue.append(v)
                      visited.add(v)

@@ -24,3 +24,9 @@ class Graph():
         if dest not in self.verticies:
             self.verticies[dest] = []
         self.verticies[dest].append(src)
+    
+    def get_adjacent_verticies(self, src):
+        if src not in self.verticies:
+            raise Exception
+        return self.verticies[src]
+

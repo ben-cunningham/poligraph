@@ -8,5 +8,5 @@ class DatabaseUtil():
     def get_edges(self, src, graph):
         edges = DatabaseManager().get_edges(src.id_)
         for edge in edges:
-            graph.add_connection(src, dest)
+            graph.add_connection(src, edge[1], "")
             
