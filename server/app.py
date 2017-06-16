@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 
 from util.search import Search
 
@@ -16,13 +16,26 @@ def search():
 
     search = Search(src)
     path = search.bfs(dest)
-    print(path)
+    
+    response = {
+        "path": get_serialized_path(path)
+    }
 
-    return 'Hello friends'
+    return jsonify(response)
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+def get_serialized_path(path):
+    bfs_path = [] 
+    for vertex in path:
+        obj = {
+            "id": vertex.id_,
+            "name": ""
+        }
+        bfs_path.append(obj)
+    return bfs_path
 
 if __name__ == '__main__':
     app.run()
