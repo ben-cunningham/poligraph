@@ -6,7 +6,6 @@ export default class ApiClient {
     
     getPath(src, dest) {
         $.get("/api/search?" +this.buildQueryString(src, dest), function(data) {
-            console.log(data);
             return data;
         });
     }
