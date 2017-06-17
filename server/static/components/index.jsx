@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Search from './Search.jsx';
+
 import ApiClient from '../services/api.js';
 
 class Index extends React.Component {
@@ -10,7 +12,12 @@ class Index extends React.Component {
   }
 
   render() {
-    return <h1> Connect-DC </h1>
+    return (
+        <div>
+            <h1> Connect-DC </h1>
+            <Search></Search>
+        </div>
+    )
   }
 }
 
