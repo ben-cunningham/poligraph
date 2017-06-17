@@ -4,9 +4,9 @@ export default class ApiClient {
     constructor() {
     }
     
-    getPath(src, dest) {
+    getPath(src, dest, onSuccess) {
         $.get("/api/search?" +this.buildQueryString(src, dest), function(data) {
-            return data;
+            onSuccess(data);
         });
     }
 
