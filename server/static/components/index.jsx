@@ -6,16 +6,17 @@ import Results from './Results.jsx';
 
 class Index extends React.Component {
   
-  constructor() {
+  constructor(props) {
       super(props);
       this.state = {
           path: []
       };
+      this.onFinishedSearch = this.onFinishedSearch.bind(this);
   }
 
   onFinishedSearch(data) {
     this.setState({
-      path: data
+      path: data.path
     });
   }
 
