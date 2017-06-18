@@ -4,7 +4,9 @@ class ResultsCell extends React.Component {
     
     render() {
         return (
-            <div></div>
+            <div>
+                {this.props.src}
+            </div>
         )
     }
 }
