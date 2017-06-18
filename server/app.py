@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, jsonify
 
 from util.connections import Connections
+from util.politician import Politician
 
 app = Flask(__name__)
 
@@ -30,8 +31,10 @@ def politician_seach():
 
     query = request.args.get('q')
 
+    results = Politician().search(query)
+
     response = {
-        "results": []
+        "results": results
     }
 
     return jsonify(response)
