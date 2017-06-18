@@ -26,3 +26,10 @@ class DatabaseManager():
         cur.close()
         return rows
 
+    def search_verticies(self, query):
+        cur = self.conn.cursor()
+        cur.execute(""" select * from vertex where name~%s limit 10;""", (query,))
+        rows = [row for row in cur]
+        cur.close()
+        return rows
+
