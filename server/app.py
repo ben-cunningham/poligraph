@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, jsonify
 
-from util.search import Search
+from util.connections import Connections
 
 app = Flask(__name__)
 
@@ -14,11 +14,24 @@ def search():
     src = request.args.get('src')
     dest = request.args.get('dest')
 
-    search = Search(src)
-    path = search.bfs(dest)
+    conns = Connections(src)
+    path = conns.search(dest)
     
     response = {
         "path": get_serialized_path(path)
+    }
+
+    return jsonify(response)
+
+@app.route('/api/politician/search')
+def politician_seach():
+    if 'q' not in request.args:
+        query = ""
+
+    query = request.args.get('q')
+
+    response = {
+        "results": []
     }
 
     return jsonify(response)
