@@ -8,15 +8,17 @@ import SearchDropDown from './SearchDropDown.jsx';
 class SearchContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      results: []
+    };
+
     this.onInputChange = this.onInputChange.bind(this);
     this.onSelection = this.onSelection.bind(this);
   }
 
   onInputChange(input) {
     var client = new ApiClient();
-    client.SearchPolitician(input, function(results) {
-      this.setState(results);
-    });
+    client.searchPolitician(input, (results) => this.setState(results));
   }
 
   onSelection(selection) {
@@ -25,9 +27,9 @@ class SearchContainer extends React.Component {
   
   render() {
     return (
-      <div class="search-container">
+      <div className="search-container">
         <SearchBar onInputChange={this.onInputChange} />
-        <SearchDropDown results={this.state.searchResults} onSelection={this.onSelection}/>
+        <SearchDropDown results={this.state.results} onSelection={this.onSelection}/>
       </div>
     );
   }
