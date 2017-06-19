@@ -24,8 +24,8 @@ class Search extends React.Component {
     render() {
         return (
             <div>
-                <SearchContainer onSelection={this.handleSelection} />
-                <SearchContainer onSelection={this.handleSelection} />
+                <SearchContainer onSelection={this.onSelection} />
+                <SearchContainer onSelection={this.onSelection} />
                 <button type="button" onClick={this.handleSearch}>Search</button>
             </div>
         )
