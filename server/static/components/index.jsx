@@ -22,8 +22,8 @@ class Index extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1> Connect-DC </h1>
+      <div className="content">
+          <h1> Connect-DC </h1>
           <Search onFinishedSearch={this.onFinishedSearch}></Search>
           <Results path={this.state.path}></Results>
       </div>

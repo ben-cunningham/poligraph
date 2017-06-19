@@ -8,7 +8,9 @@ class SearchDropDown extends React.Component {
     });
 
     return (
-      <div>{rows}</div>
+      <div className="drop-down">
+          {rows}
+      </div>
     );
   }
 }

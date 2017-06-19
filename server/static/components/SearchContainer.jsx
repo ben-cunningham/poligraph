@@ -27,10 +27,10 @@ class SearchContainer extends React.Component {
   
   render() {
     return (
-      <div className="search-container">
+      <span className="search-container">
         <SearchBar onInputChange={this.onInputChange} />
         <SearchDropDown results={this.state.results} onSelection={this.onSelection}/>
-      </div>
+      </span>
     );
   }
 }
