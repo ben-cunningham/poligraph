@@ -10,6 +10,12 @@ export default class ApiClient {
         });
     }
 
+    searchPolitician(query, onSuccess) {
+        $.get("/api/politician/search?q=" +query, function(results) {
+            onSuccess(results);
+        });
+    }
+
     buildQueryString(src, dest) {
         return "src=" +src +"&dest=" +dest;
     }
