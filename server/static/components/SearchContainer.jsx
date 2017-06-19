@@ -15,8 +15,10 @@ class SearchContainer extends React.Component {
   
   render() {
     return (
-      <SearchBar onInputChange={this.onInputChange} />
-      <SearchDropDown results={this.searchResults} />
+      <div class="search-container">
+        <SearchBar onInputChange={this.onInputChange} />
+        <SearchDropDown results={this.searchResults} />
+      </div>
     );
   }
 }
