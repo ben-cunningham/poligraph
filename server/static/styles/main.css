@@ -1,0 +1,19 @@
+.container {
+
+}
+
+.content {
+  margin: 0 auto;
+  padding: 0 2em;
+  max-width: 800px;
+}
+
+
+.search-container {
+  position: relative;
+  width: 400px;
+}
+
+.drop-down {
+  position: absolute;
+}
