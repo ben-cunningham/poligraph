@@ -17,3 +17,12 @@
 .drop-down {
   position: absolute;
 }
+
+.search-container .drop-down .drop-down-row:hover {
+  background-color: #e5e5e5;
+}
+
+.search-container .drop-down a {
+  text-decoration: none;
+  color: inherit;
+}
