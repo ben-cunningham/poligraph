@@ -17,8 +17,8 @@ class Search extends React.Component {
         client.getPath("Q6294", "Q76", (data) => this.props.onFinishedSearch(data));
     }
 
-    onSelection() {
-    
+    onSelection(key) {
+        console.log(key); 
     }
     
     render() {
