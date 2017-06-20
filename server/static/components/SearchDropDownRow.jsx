@@ -13,7 +13,9 @@ class SearchDropDownRow extends React.Component {
   
   render() {
     return (
-      <div className="drop-down-row" onClick={this.handleSelection}>{this.props.name}</div>
+      <a href="#" onclick="return false;">
+        <div className="drop-down-row" onClick={this.handleSelection}>{this.props.name}</div>
+      </a>
     );
   }
 }

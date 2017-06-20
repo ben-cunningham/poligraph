@@ -8,25 +8,49 @@ class Search extends React.Component {
     
     constructor(props) {
         super(props);
+        
+        this.state = {
+            1: "",
+            2: "",
+        };
         this.handleSearch = this.handleSearch.bind(this);
         this.onSelection = this.onSelection.bind(this);
     }
     
     handleSearch() {
-        var client = new ApiClient();
-        client.getPath("Q6294", "Q76", (data) => this.props.onFinishedSearch(data));
+        if (this.state[1] != "" && this.state[2] != "") {
+            var client = new ApiClient();
+            client.getPath(this.state[1], this.state[2], (data) => this.props.onFinishedSearch(data));
+        }
     }
 
-    onSelection(key) {
-        console.log(key); 
+    onSelection(id, key) {
+        if (id == 1) {
+            this.setState({
+                1: key,
+                2: this.state[2]
+            }, this.toggleButton);
+        } else {
+            this.setState({
+                1: this.state[1],
+                2: key
+            }, this.toggleButton);
+        }      
     }
+
+    toggleButton() {
+        // enable button if state has both values for search 
+    }
+
+    checkState() {
+            }
     
     render() {
         return (
             <div>
                 <form className="pure-form search">
-                    <SearchContainer onSelection={this.onSelection} />
-                    <SearchContainer onSelection={this.onSelection} />
+                    <SearchContainer onSelection={this.onSelection} id={1}/>
+                    <SearchContainer onSelection={this.onSelection} id={2}/>
                     <button type="button" className="pure-button button-success" onClick={this.handleSearch}>Search</button>
                 </form>
             </div>

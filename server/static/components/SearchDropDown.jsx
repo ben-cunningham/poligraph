@@ -17,8 +17,8 @@ class SearchDropDown extends React.Component {
     var rows = [];
     this.props.results.forEach((pol) => {
       rows.push(<SearchDropDownRow key={pol[0]} 
-                                   id={pol[0]}
-                                   name={pol[1]} 
+                                   id={pol[0].trim()}
+                                   name={pol[1].trim()} 
                                    handleSelection={this.handleSelection}/>);
     });
 

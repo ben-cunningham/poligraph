@@ -22,7 +22,7 @@ class SearchContainer extends React.Component {
   }
 
   onSelection(selection) {
-    this.props.onSelection(selection);
+    this.props.onSelection(this.props.id, selection);
   }
   
   render() {
