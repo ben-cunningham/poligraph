@@ -6,11 +6,15 @@ class SearchDropDown extends React.Component {
   
   constructor(props) {
     super(props);
+    this.state = { showDropDown: true }
     this.handleSelection = this.handleSelection.bind(this);
   }
 
   handleSelection(key) {
     this.props.onSelection(key);
+    this.setState({
+      showDropDown: false
+    });
   }
   
   render() {
@@ -23,7 +27,7 @@ class SearchDropDown extends React.Component {
     });
 
     return (
-      <div className="drop-down">
+      <div className={this.state.showDropDown ? 'drop-down' : 'hidden'}>
           {rows}
       </div>
     );

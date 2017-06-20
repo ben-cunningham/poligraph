@@ -14,6 +14,10 @@
   width: 350px;
 }
 
+.search-container .hidden {
+  display: none;
+}
+
 .drop-down {
   position: absolute;
 }
