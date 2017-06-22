@@ -5,6 +5,7 @@ class Connections():
 
     def __init__(self, src):
         self.g = Graph(src, self)
+        self.db = DatabaseManager()
 
     def search(self, dest):
         return self.g.bfs(dest)
@@ -30,6 +31,6 @@ class Connections():
         return response_path
 
     def fetch_edges(self, src):
-        edges = DatabaseManager().get_edges(src.id_)
+        edges = self.db.get_edges(src.id_)
         for edge in edges:
             self.g.add_connection(src, Node(edge[1]), edge[2])
