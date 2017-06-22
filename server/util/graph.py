@@ -50,7 +50,7 @@ class Graph():
              if node == dest:
                  return curr_path
 
-             self.manager.get_edges(node) # get the neighboring nodes from the database and populate graph
+             self.manager.fetch_edges(node) # get the neighboring nodes from the database and populate graph
              for v, t in self.get_adjacent_verticies(node):
                  if v not in visited:
                      new_path = list(curr_path)
