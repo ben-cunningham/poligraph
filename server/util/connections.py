@@ -9,7 +9,27 @@ class Connections():
     def search(self, dest):
         return self.g.bfs(dest)
 
-    def get_edges(self, src):
+    def get_path_with_context(self, path):
+        response_path = []
+        for i in range(0, len(path) - 1):
+            for w, t in self.g.get_adjacent_verticies(path[i]):
+                if path[i+1] == w:
+                    obj = {
+                        "from": {
+                            "id": path[i].id_,
+                            "name": ""
+                        },
+                        "context": t,
+                        "to": {
+                            "id": w.id_,
+                            "name": ""
+                        }
+                    }
+
+                    response_path.append(obj)
+        return response_path
+
+    def fetch_edges(self, src):
         edges = DatabaseManager().get_edges(src.id_)
         for edge in edges:
             self.g.add_connection(src, Node(edge[1]), edge[2])

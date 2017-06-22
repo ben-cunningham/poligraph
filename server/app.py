@@ -17,12 +17,9 @@ def search():
 
     conns = Connections(src)
     path = conns.search(dest)
+    response_path = conns.get_path_with_context(path)
     
-    response = {
-        "path": get_serialized_path(path)
-    }
-
-    return jsonify(response)
+    return jsonify(response_path)
 
 @app.route('/api/politician/search')
 def politician_seach():
