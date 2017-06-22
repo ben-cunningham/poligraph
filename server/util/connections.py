@@ -12,4 +12,4 @@ class Connections():
     def get_edges(self, src):
         edges = DatabaseManager().get_edges(src.id_)
         for edge in edges:
-            self.g.add_connection(src, Node(edge[1]), "")
+            self.g.add_connection(src, Node(edge[1]), edge[2])

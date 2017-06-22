@@ -28,11 +28,11 @@ class Graph():
         self.verticies[node] = []
 
     def add_connection(self, src, dest, text):
-        self.verticies[src].append(dest)
+        self.verticies[src].append((dest, text, ))
         
         if dest not in self.verticies:
             self.verticies[dest] = []
-        self.verticies[dest].append(src)
+        self.verticies[dest].append((src, text, ))
     
     def get_adjacent_verticies(self, src):
         if src not in self.verticies:
@@ -51,7 +51,7 @@ class Graph():
                  return curr_path
 
              self.manager.get_edges(node) # get the neighboring nodes from the database and populate graph
-             for v in self.get_adjacent_verticies(node):
+             for v, t in self.get_adjacent_verticies(node):
                  if v not in visited:
                      new_path = list(curr_path)
                      new_path.append(v)
