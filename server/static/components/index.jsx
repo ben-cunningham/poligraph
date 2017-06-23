@@ -16,7 +16,7 @@ class Index extends React.Component {
 
   onFinishedSearch(data) {
     this.setState({
-      path: data.path
+      path: data
     });
   }
 
