@@ -5,7 +5,7 @@ class ContextResultsCell extends React.Component {
   render() {
     return (
       <div>
-        {this.props.src}
+        {this.props.text}
       </div>
     )
   }
