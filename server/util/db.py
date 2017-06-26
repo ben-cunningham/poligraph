@@ -21,8 +21,13 @@ class DatabaseManager():
 
     def get_edges(self, node):
         cur = self.conn.cursor()
-        cur.execute(""" select * from edge where "to"=%s; """, (node, ))
+        cur.execute(""" 
+            with x as 
+                (select * from edge join vertex on edge.to=vertex.entity 
+                    where edge.to=%s or edge.from=%s) 
+            select * from x join vertex on x.from=vertex.entity; """, (node, node))
         rows = [row for row in cur]
+
         cur.close()
         return rows
 
