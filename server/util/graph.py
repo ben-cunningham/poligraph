@@ -1,8 +1,8 @@
 class Node():
     
-    def __init__(self, id_):
+    def __init__(self, id_, name):
         self.id_ = id_
-        self.name = ""
+        self.name = name
     
     def __hash__(self):
         return hash(self.id_)
@@ -21,7 +21,7 @@ class Graph():
     def __init__(self, src, manager):
         self.manager = manager
         self.verticies = {}
-        self.src = Node(src)
+        self.src = Node(src, "")
         self.add_vertex(self.src)
 
     def add_vertex(self, node):
@@ -40,7 +40,7 @@ class Graph():
         return self.verticies[src]
 
     def bfs(self, dest):
-         dest = Node(dest)
+         dest = Node(dest, "")
          path = [[self.src]]
          visited = set()
 

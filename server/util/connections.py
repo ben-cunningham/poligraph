@@ -18,12 +18,12 @@ class Connections():
                     obj = {
                         "from": {
                             "id": path[i].id_,
-                            "name": ""
+                            "name": path[i].name
                         },
                         "context": t,
                         "to": {
                             "id": w.id_,
-                            "name": ""
+                            "name": path[i].name
                         }
                     }
 
@@ -33,4 +33,5 @@ class Connections():
     def fetch_edges(self, src):
         edges = self.db.get_edges(src.id_)
         for edge in edges:
-            self.g.add_connection(src, Node(edge[1]), edge[2])
+            print(edge[0])
+            self.g.add_connection(src, Node(edge[1], edge[0]), edge[2])
