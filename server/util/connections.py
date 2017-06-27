@@ -30,7 +30,16 @@ class Connections():
                     response_path.append(obj)
         return response_path
 
-    def fetch_edges(self, src):
+    def fetch_edges(self, src)
         edges = self.db.get_edges(src.id_)
         for edge in edges:
-            self.g.add_connection(src, Node(edge[1], edge[0]), edge[2])
+            src_node, dest_node = self.get_nodes_from_row(src, edge)
+            self.g.add_connection(src_node, dest_node), edge[2])
+
+    def get_nodes_from_row(self, src, row):
+       node1 = Node(row[0], row[4])
+       node2 = Node(row[1], row[7])
+       if src == row[0]:
+           return node1, node2
+       else:
+           return node2, node1
