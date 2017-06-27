@@ -21,7 +21,7 @@ class Graph():
     def __init__(self, src, manager):
         self.manager = manager
         self.verticies = {}
-        self.src = Node(src, "")
+        self.src = Node(src, "asdf")
         self.add_vertex(self.src)
 
     def add_vertex(self, node):
@@ -52,7 +52,7 @@ class Graph():
                  if v not in visited:
                      new_path = list(curr_path)
                      new_path.append(v)
-                     if v == dest:
+                     if v.id_ == dest:
                          return new_path
                      path.append(new_path)
                      visited.add(v)

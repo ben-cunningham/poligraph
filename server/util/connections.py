@@ -23,23 +23,23 @@ class Connections():
                         "context": t,
                         "to": {
                             "id": w.id_,
-                            "name": path[i].name
+                            "name": w.name
                         }
                     }
 
                     response_path.append(obj)
         return response_path
 
-    def fetch_edges(self, src)
+    def fetch_edges(self, src):
         edges = self.db.get_edges(src.id_)
         for edge in edges:
             src_node, dest_node = self.get_nodes_from_row(src, edge)
-            self.g.add_connection(src_node, dest_node), edge[2])
+            self.g.add_connection(src_node, dest_node, edge[2])
 
     def get_nodes_from_row(self, src, row):
        node1 = Node(row[0], row[4])
        node2 = Node(row[1], row[7])
-       if src == row[0]:
+       if src.id_ == row[0]:
            return node1, node2
        else:
            return node2, node1
