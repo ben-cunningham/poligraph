@@ -40,7 +40,6 @@ class Graph():
         return self.verticies[src]
 
     def bfs(self, dest):
-         dest = Node(dest, "")
          path = [[self.src]]
          visited = set()
 
