@@ -33,5 +33,4 @@ class Connections():
     def fetch_edges(self, src):
         edges = self.db.get_edges(src.id_)
         for edge in edges:
-            print(edge[0])
             self.g.add_connection(src, Node(edge[1], edge[0]), edge[2])
