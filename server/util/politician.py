@@ -8,5 +8,10 @@ class Politician():
        return results
 
    def get_information(self, entity):
-       pass
+       db = DatabaseManager()
+       result = db.get_entity(entity)
+       if len(result) > 0:
+           return result[1]
+       else:
+           raise Exception()
 

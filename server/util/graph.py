@@ -1,3 +1,5 @@
+from util.politician import Politician
+
 class Node():
     
     def __init__(self, id_, name):
@@ -21,7 +23,8 @@ class Graph():
     def __init__(self, src, manager):
         self.manager = manager
         self.verticies = {}
-        self.src = Node(src, "asdf")
+        name = Politician().get_information(src)
+        self.src = Node(src, name)
         self.add_vertex(self.src)
 
     def add_vertex(self, node):

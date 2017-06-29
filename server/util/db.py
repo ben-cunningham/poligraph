@@ -37,4 +37,11 @@ class DatabaseManager():
         rows = [row for row in cur]
         cur.close()
         return rows
+    
+    def get_entity(self, uid):
+       cur = self.conn.cursor()
+       cur.execute(""" select * from vertex where entity=%s; """, (uid, ))
+       rows = [row for row in cur]
+       cur.close()
+       return rows[0] if len(rows) > 0 else []
 
