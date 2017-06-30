@@ -6,7 +6,7 @@ class PersonResultsCell extends React.Component {
     var name = this.props.name.replace('_', ' ');
 
     return (
-      <div>
+      <div className="person-row">
         <b>{name}</b>
       </div>
     );

@@ -36,3 +36,12 @@
   text-decoration: none;
   color: inherit;
 }
+
+.content .results {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.content .results .person-row {
+  text-align: center;
+}
