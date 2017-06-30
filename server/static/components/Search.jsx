@@ -47,13 +47,15 @@ class Search extends React.Component {
     
     render() {
         return (
-            <div>
-                <form className="pure-form search">
-                    <SearchContainer onSelection={this.onSelection} id={1}/>
-                    <SearchContainer onSelection={this.onSelection} id={2}/>
-                    <button type="button" className="pure-button button-success" onClick={this.handleSearch}>Search</button>
-                </form>
+          <div className="search-container">
+            <div className="search">
+              <form className="pure-form search-form">
+                <SearchContainer onSelection={this.onSelection} id={1}/>
+                <SearchContainer onSelection={this.onSelection} id={2}/>
+                <button type="button" className="pure-button button-success" onClick={this.handleSearch}>Search</button>
+              </form>
             </div>
+          </div>
         )
     }
 }
