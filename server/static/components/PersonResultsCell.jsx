@@ -1,11 +1,13 @@
 import React from 'react';
 
 class PersonResultsCell extends React.Component {
-  
+
   render() {
+    var name = this.props.name.replace('_', ' ');
+
     return (
       <div>
-        <b>{this.props.id}</b>
+        <b>{name}</b>
       </div>
     );
   }
