@@ -14,11 +14,17 @@
   width: 350px;
 }
 
+.search-container input {
+  margin: 0.5em;
+  width: 40%;
+}
+
 .search-container .hidden {
   display: none;
 }
 
 .drop-down {
+  margin-left: 0.5em;
   position: absolute;
 }
 
