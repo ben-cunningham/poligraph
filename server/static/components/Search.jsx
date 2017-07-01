@@ -43,7 +43,8 @@ class Search extends React.Component {
     }
 
     checkState() {
-            }
+    
+    }
     
     render() {
         return (
