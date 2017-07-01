@@ -9,7 +9,8 @@ class SearchContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: []
+      results: [],
+      selection: ""
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -17,18 +18,20 @@ class SearchContainer extends React.Component {
   }
 
   onInputChange(input) {
+    this.setState({textValue: input})
     var client = new ApiClient();
-    client.searchPolitician(input, (results) => this.setState(results));
+    client.searchPolitician(input, (results) => this.setState({results: results.results}));
   }
 
-  onSelection(selection) {
+  onSelection(selection, name) {
     this.props.onSelection(this.props.id, selection);
+    this.setState({textValue: name});
   }
   
   render() {
     return (
       <span className="search-input-container">
-        <SearchBar onInputChange={this.onInputChange} />
+        <SearchBar onInputChange={this.onInputChange} selection={this.state.textValue}/>
         <SearchDropDown results={this.state.results} onSelection={this.onSelection}/>
       </span>
     );

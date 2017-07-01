@@ -8,7 +8,7 @@ class SearchDropDownRow extends React.Component {
   }
 
   handleSelection(event) {
-    this.props.handleSelection(this.props.id); 
+    this.props.handleSelection(this.props.id, this.props.name); 
   }
   
   render() {

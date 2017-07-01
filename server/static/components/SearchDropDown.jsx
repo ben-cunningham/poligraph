@@ -10,8 +10,8 @@ class SearchDropDown extends React.Component {
     this.handleSelection = this.handleSelection.bind(this);
   }
 
-  handleSelection(key) {
-    this.props.onSelection(key);
+  handleSelection(key, name) {
+    this.props.onSelection(key, name);
     this.setState({
       showDropDown: false
     });
@@ -20,9 +20,10 @@ class SearchDropDown extends React.Component {
   render() {
     var rows = [];
     this.props.results.forEach((pol) => {
+      var name = pol[1].trim().replace('_', ' ');
       rows.push(<SearchDropDownRow key={pol[0]} 
                                    id={pol[0].trim()}
-                                   name={pol[1].trim()} 
+                                   name={name} 
                                    handleSelection={this.handleSelection}/>);
     });
 
