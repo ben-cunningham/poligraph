@@ -1,12 +1,28 @@
-.container {
+html, body {
+  height: 100%;
+  overflow: auto;
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
 
+h1 {
+  margin-top: 0 !important;
+  padding-top: 0.667em;
+}
+
+#container {
+  margin: 0;
+  padding: 0;
+  height: 100%
 }
 
 .content {
   margin: 0 auto;
-  padding: 0 2em;
+  padding: 1em;
   max-width: 800px;
   width: 800px;
+  height: 100%;
+  background-color: #ededed;
 }
 
 .search-container {
