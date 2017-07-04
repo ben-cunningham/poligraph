@@ -3,6 +3,7 @@ html, body {
   overflow: auto;
   min-height: 100%;
   font-family: 'Roboto', sans-serif;
+  background-color: #ededed;
 }
 
 h1 {
@@ -18,11 +19,9 @@ h1 {
 
 .content {
   margin: 0 auto;
-  padding: 1em;
   max-width: 800px;
   width: 800px;
   height: 100%;
-  background-color: #ededed;
 }
 
 .search-container {
@@ -30,7 +29,7 @@ h1 {
 }
 
 .search {
-  height: 200px;
+ 
 }
 
 .search-container .search .search-form {
@@ -56,8 +55,9 @@ h1 {
 .drop-down {
   margin-left: 0.5em;
   position: absolute;
-  padding: 2px;
+  padding: 4px;
   box-shadow: 2px 2px 6px #888888;
+  background-color: white;
 }
 
 .drop-down .drop-down-row {
@@ -74,7 +74,6 @@ h1 {
 }
 
 .content .results {
-  margin-top: 1em;
   margin-bottom: 2em;
 }
 
