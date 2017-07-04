@@ -3,9 +3,9 @@ from util.graph import Graph, Node
 
 class Connections():
 
-    def __init__(self, src):
+    def __init__(self, db_man, src):
         self.g = Graph(src, self)
-        self.db = DatabaseManager()
+        self.db = db_man
 
     def search(self, dest):
         return self.g.bfs(dest)

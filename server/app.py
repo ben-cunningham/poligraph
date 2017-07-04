@@ -1,9 +1,30 @@
 from flask import Flask, request, render_template, jsonify
+from sqlalchemy import create_engine
+from urllib.parse import urlparse
+import configparser
+import psycopg2
 
 from util.connections import Connections
 from util.politician import Politician
+from util.db import DatabaseManager
 
 app = Flask(__name__)
+
+def get_db_conn():
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    url = config.get('Database config', 'DATABASE_URL')
+    url = urlparse(url)
+
+    c = psycopg2.connect(
+        database=url.path[1:],
+        user=url.username,
+        password=url.password,
+        host=url.hostname,
+        port=url.port
+    )
+
+    return c
 
 @app.route('/api/search')
 def search():
@@ -15,7 +36,7 @@ def search():
     src = request.args.get('src')
     dest = request.args.get('dest')
 
-    conns = Connections(src)
+    conns = Connections(db_man, src)
     path = conns.search(dest)
     response_path = conns.get_path_with_context(path)
     
@@ -28,11 +49,13 @@ def politician_seach():
 
     query = request.args.get('q')
 
-    results = Politician().search(query)
+    results = Politician().search(db_man, query)
 
     response = {
         "results": results
     }
+
+    print(results)
 
     return jsonify(response)
 
@@ -49,6 +72,9 @@ def get_serialized_path(path):
         }
         bfs_path.append(obj)
     return bfs_path
+
+engine = create_engine('postgresql://', creator=get_db_conn)
+db_man = DatabaseManager(engine)
 
 if __name__ == '__main__':
     app.run()
