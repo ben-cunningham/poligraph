@@ -23,13 +23,14 @@
 
 .search-input-container {
   position: relative;
-  width: 350px;
+  width: 40%;
+  display: inline-block;
 }
 
 .search-input-container input {
   margin: 0.5em;
-  width: 40%;
   height: 40px;
+  width: 90%;
 }
 
 .search-input-container .hidden {
