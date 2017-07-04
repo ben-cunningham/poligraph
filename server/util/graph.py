@@ -23,7 +23,7 @@ class Graph():
     def __init__(self, src, manager):
         self.manager = manager
         self.verticies = {}
-        name = Politician().get_information(self.manager.db_man, src)
+        name = Politician().get_information(manager.db, src)
         self.src = Node(src, name)
         self.add_vertex(self.src)
 
