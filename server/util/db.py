@@ -1,6 +1,4 @@
 import psycopg2
-import configparser
-from urllib.parse import urlparse
 
 class DatabaseManager():
     

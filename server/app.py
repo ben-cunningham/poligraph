@@ -55,8 +55,6 @@ def politician_seach():
         "results": results
     }
 
-    print(results)
-
     return jsonify(response)
 
 @app.route('/')
