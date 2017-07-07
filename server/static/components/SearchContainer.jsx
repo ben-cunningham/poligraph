@@ -10,11 +10,14 @@ class SearchContainer extends React.Component {
     super(props);
     this.state = {
       results: [],
-      selection: ""
+      selection: "",
+      showDropDown: false
     };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSelection = this.onSelection.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.onFocus = this.onFocus.bind(this);
   }
 
   onInputChange(input) {
@@ -27,12 +30,29 @@ class SearchContainer extends React.Component {
     this.props.onSelection(this.props.id, selection);
     this.setState({textValue: name});
   }
+
+  onFocus() {
+    this.setState({
+      showDropDown: true
+    });
+  }
+
+  onBlur() {
+    this.setState({
+      showDropDown: false
+    });
+  }
   
   render() {
     return (
       <span className="search-input-container">
-        <SearchBar onInputChange={this.onInputChange} selection={this.state.textValue}/>
-        <SearchDropDown results={this.state.results} onSelection={this.onSelection}/>
+        <SearchBar onInputChange={this.onInputChange} 
+                   selection={this.state.textValue}
+                   onFocus={this.onFocus}
+                   onBlur={this.onBlur}/>
+        <SearchDropDown results={this.state.results} 
+                        onSelection={this.onSelection}
+                        showDropDown={this.state.showDropDown}/>
       </span>
     );
   }

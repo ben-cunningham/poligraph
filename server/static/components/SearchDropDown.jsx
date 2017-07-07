@@ -6,7 +6,7 @@ class SearchDropDown extends React.Component {
   
   constructor(props) {
     super(props);
-    this.state = { showDropDown: true }
+    this.state = { showDropDown: false };
     this.handleSelection = this.handleSelection.bind(this);
   }
 
@@ -16,7 +16,13 @@ class SearchDropDown extends React.Component {
       showDropDown: false
     });
   }
-  
+
+  componentWillReceiveProps() {
+    this.setState({
+      showDropDown: this.props.showDropDown
+    });
+  }
+
   render() {
     var rows = [];
     this.props.results.forEach((pol) => {
