@@ -32,12 +32,19 @@ def search():
         return 'src node not provided', 400
     if 'dest' not in request.args:
         return 'dest node not provided', 400
-    
+   
     src = request.args.get('src')
     dest = request.args.get('dest')
 
+    if src == dest:
+        return 'Source and destination cannot be the same', 400
+
     conns = Connections(db_man, src)
     path = conns.search(dest)
+
+    if len(path) == 0:
+        return 'Could not find path', 400
+
     response_path = conns.get_path_with_context(path)
     
     return jsonify(response_path)
