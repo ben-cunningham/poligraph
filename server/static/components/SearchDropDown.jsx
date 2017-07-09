@@ -33,8 +33,13 @@ class SearchDropDown extends React.Component {
                                    handleSelection={this.handleSelection}/>);
     });
 
+    var showDropDown = this.state.showDropDown;
+    if (rows.length == 0) {
+        showDropDown = false;
+    }
+
     return (
-      <div className={this.state.showDropDown ? 'drop-down' : 'hidden'}>
+      <div className={showDropDown ? 'drop-down' : 'hidden'}>
           {rows}
       </div>
     );
