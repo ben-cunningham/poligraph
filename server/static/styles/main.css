@@ -11,6 +11,18 @@ h1 {
   padding-top: 0.667em;
 }
 
+.navbar {
+  background-color: #838384;
+}
+
+.navbar .title {
+  color: #ededed;
+  max-width: 800px;
+  width: 800px;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
 #container {
   margin: 0;
   padding: 0;
