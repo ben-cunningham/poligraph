@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import NavBar from './nav/NavBar.jsx';
 import Search from './Search.jsx';
 import Results from './Results.jsx';
 

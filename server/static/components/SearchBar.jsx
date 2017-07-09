@@ -23,7 +23,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <input type="text" 
-                   className="search" 
+                   className="form-control search" 
                    onChange={this.handleChange}
                    onFocus={this.onFocus}
                    onBlur={this.onBlur}
