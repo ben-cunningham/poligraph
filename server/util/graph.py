@@ -1,3 +1,5 @@
+import datetime
+
 from util.politician import Politician
 
 class Node():
@@ -45,13 +47,14 @@ class Graph():
     def bfs(self, dest):
          path = [[self.src]]
          visited = set()
+         starttime = datetime.datetime.now()
 
          while len(path) > 0:
              curr_path = path.pop(0)
              node = curr_path[-1]
 
              # we don't want the path to bfs to run forever, and this running time is too long for web request
-             if len(curr_path) > 4:
+             if len(curr_path) > 4 or starttime < datetime.datetime.now() - datetime.timedelta(seconds=20):
                  return []
 
              self.manager.fetch_edges(node) # get the neighboring nodes from the database and populate graph
