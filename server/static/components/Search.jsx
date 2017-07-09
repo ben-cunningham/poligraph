@@ -25,10 +25,14 @@ class Search extends React.Component {
               searching: true
             });
             client.getPath(this.state[1], this.state[2], (data) => {
-              this.setState({
-                searching: false
-              });
-              this.props.onFinishedSearch(data);
+                this.setState({
+                    searching: false
+                });
+                this.props.onFinishedSearch(data);
+            }, () => {
+                this.setState({
+                    searching: false
+                });
             });
         }
     }
