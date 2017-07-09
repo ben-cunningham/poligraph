@@ -12,6 +12,7 @@ class Search extends React.Component {
         this.state = {
             1: "",
             2: "",
+            searching: false
         };
         this.handleSearch = this.handleSearch.bind(this);
         this.onSelection = this.onSelection.bind(this);
@@ -20,7 +21,15 @@ class Search extends React.Component {
     handleSearch() {
         if (this.state[1] != "" && this.state[2] != "") {
             var client = new ApiClient();
-            client.getPath(this.state[1], this.state[2], (data) => this.props.onFinishedSearch(data));
+            this.setState({
+              searching: true
+            });
+            client.getPath(this.state[1], this.state[2], (data) => {
+              this.setState({
+                searching: false
+              });
+              this.props.onFinishedSearch(data);
+            });
         }
     }
 
@@ -51,6 +60,8 @@ class Search extends React.Component {
           <div className="search-container">
             <div className="search">
               <form className="pure-form search-form">
+                <div className={this.state.searching ? "loading-spinner" : "hidden"}></div>
+                <div className={this.state.searching ? "disable-ui" : "hidden"}></div>
                 <SearchContainer onSelection={this.onSelection} id={1}/>
                 <SearchContainer onSelection={this.onSelection} id={2}/>
                 <button type="button" className="pure-button button-success" onClick={this.handleSearch}>Search</button>
