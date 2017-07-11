@@ -1,7 +1,8 @@
+import os
+
 from flask import Flask, request, render_template, jsonify
 from sqlalchemy import create_engine
 from urllib.parse import urlparse
-import configparser
 import psycopg2
 
 from util.connections import Connections
@@ -11,9 +12,7 @@ from util.db import DatabaseManager
 app = Flask(__name__)
 
 def get_db_conn():
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    url = config.get('Database config', 'DATABASE_URL')
+    url = os.environ['POLIGRPAH_DATABASE_URL']
     url = urlparse(url)
 
     c = psycopg2.connect(
