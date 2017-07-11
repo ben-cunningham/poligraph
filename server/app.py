@@ -12,7 +12,7 @@ from util.db import DatabaseManager
 app = Flask(__name__)
 
 def get_db_conn():
-    url = os.environ['POLIGRPAH_DATABASE_URL']
+    url = os.environ['POLIGRAPH_DATABASE_URL']
     url = urlparse(url)
 
     c = psycopg2.connect(
