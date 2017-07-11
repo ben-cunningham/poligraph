@@ -41,7 +41,7 @@ def search():
     conns = Connections(db_man, src)
     path = conns.search(dest)
 
-    if len(path) == 0:
+    if path is None or len(path) == 0:
         return 'Could not find path', 400
 
     response_path = conns.get_path_with_context(path)
