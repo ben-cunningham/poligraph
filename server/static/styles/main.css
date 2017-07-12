@@ -25,7 +25,6 @@ h1 {
 
 .navbar i {
   float: right;
-  padding-right: 2.2em;
   padding-top: 0.2em;
 }
 
@@ -62,7 +61,7 @@ h1 {
 
 .search-input-container {
   position: relative;
-  width: 40%;
+  width: 44%;
   display: inline-block;
 }
 
@@ -71,6 +70,11 @@ h1 {
   height: 40px;
   width: 90%;
   color: black;
+}
+
+.search-container button {
+  float: right;
+  margin-top: 8px;
 }
 
 .search-input-container .hidden {
@@ -159,4 +163,10 @@ h1 {
 
 :-ms-input-placeholder {
   color: #cccccc !important;
+}
+
+.about {
+  margin-top: 2em;
+  text-align: justify;
+  text-justify: inter-word;
 }
