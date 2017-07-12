@@ -5,7 +5,7 @@ class NavBar extends React.Component {
     return (
       <div className="navbar navbar-toggleable-md">
         <span className="navbar-brand title">
-          <b>Poligraph</b>
+          <a href="/"><b>Poligraph</b></a>
           <a href="/about"><i className="fa fa-question-circle" aria-hidden="true"></i></a>
         </span>
       </div>
