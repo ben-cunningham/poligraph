@@ -54,6 +54,7 @@ h1 {
   margin: 0.5em;
   height: 40px;
   width: 90%;
+  color: black;
 }
 
 .search-input-container .hidden {
@@ -126,4 +127,20 @@ h1 {
 
 .content .results .person-row {
   text-align: center;
+}
+
+::-webkit-input-placeholder {
+  color: #cccccc !important;
+}
+
+:-moz-placeholder {
+  color: #cccccc !important;
+}
+
+::-moz-placeholder {
+ color: #cccccc !important;
+}
+
+:-ms-input-placeholder {
+  color: #cccccc !important;
 }

@@ -70,8 +70,8 @@ class Search extends React.Component {
               <form className="form-group search-form">
                 <div className={this.state.searching ? "loading-spinner" : "hidden"}></div>
                 <div className={this.state.searching ? "disable-ui" : "hidden"}></div>
-                <SearchContainer onSelection={this.onSelection} id={1}/>
-                <SearchContainer onSelection={this.onSelection} id={2}/>
+                <SearchContainer onSelection={this.onSelection} id={1} placeholder="Barack Obama"/>
+                <SearchContainer onSelection={this.onSelection} id={2} placeholder="Hillary Clinton"/>
                 <button type="button" className="btn btn-primary" onClick={this.handleSearch}>Search</button>
               </form>
             </div>

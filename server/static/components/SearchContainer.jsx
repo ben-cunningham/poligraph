@@ -46,7 +46,8 @@ class SearchContainer extends React.Component {
   render() {
     return (
       <span className="search-input-container">
-        <SearchBar onInputChange={this.onInputChange} 
+        <SearchBar placeholder={this.props.placeholder}
+                   onInputChange={this.onInputChange} 
                    selection={this.state.textValue}
                    onFocus={this.onFocus}
                    onBlur={this.onBlur}/>
