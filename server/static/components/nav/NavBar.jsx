@@ -4,7 +4,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="navbar navbar-toggleable-md">
-        <span className="navbar-brand title"><b>Connect-DC</b></span>
+        <span className="navbar-brand title"><b>Poligraph</b></span>
       </div>
     );
   }
