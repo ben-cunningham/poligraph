@@ -23,6 +23,22 @@ h1 {
   font-size: 2em;
 }
 
+.navbar i {
+  float: right;
+  padding-right: 2.2em;
+  padding-top: 0.2em;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar a:hover {
+  color: inherit;
+}
+
+
 #container {
   margin: 0;
   padding: 0;
