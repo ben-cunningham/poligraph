@@ -67,6 +67,10 @@ def politician_seach():
 def index():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 def get_serialized_path(path):
     bfs_path = [] 
     for vertex in path:
