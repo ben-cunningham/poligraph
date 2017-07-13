@@ -16,8 +16,39 @@
     </div>
         <div class="content">
             <div class="about">
-                <p>All the data was taken from Wikipedia so do not take it as an authority. The connections are the context in which one politician appears on another person's page. For example, if Hillary Clinton is mentioned as Obama's Secretary of State on his page, then that is a bi-directional connection. If no connection was returned then assume one does not exist on Wikipedia.</p>
-                <p></p>
+                <h1>Questions</h1>
+                <div class="questions">
+                    <div class="question-group">
+                        <div class="question">Where does the data come from?</div>
+                        <div class="answer">
+                        All the data was sourced from Wikipedia so do not use it as an authority.
+                        </div>
+                    </div>
+                    <div class="question-group">
+                        <div class="question">How is a connection determined?</div>
+                        <div class="answer">
+                        The connections are the context in which one politician appears on another person's page. For example, if Hillary Clinton is mentioned as Obama's Secretary of State on his page, then that is a bi-directional connection.
+                        </div>
+                    </div>
+                    <div class="question-group">
+                        <div class="question">Why can't I find person X when searching?</div>
+                        <div class="answer">
+                        The queries are case sensitive and fairly static. If you still are not able to find your desired person, ensure your query is exactly how it appears in Wikipedia's URL. For example, George H Bush's is <code>https://en.wikipedia.org/wiki/George_Herbert_Walker_Bush</code>, so one must eneter <code>George Herbert Walker Bush</code>. <code>H W</code>, <code>george b</code>, or <code>bush</code> will not work. If you are still unsuccessful, then either contact me or adjust your query.
+                        </div>
+                    </div>
+                    <div class="question-group">
+                        <div class="question">Why doesn't my returned result make any sense?</div>
+                        <div class="answer">
+                        The context taken from Wikipedia may not be complete sentences and during data gathering simple NLP was used to extract the context so it may not be optimal. 
+                        </div>
+                    </div>
+                    <div class="question-group">
+                        <div class="question">What can I do if there is misinformation or connection path isn't optimal?</div>
+                        <div class="answer">
+                        If you're unsatisfied with the results or wish to see an aleration you can also contact me.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

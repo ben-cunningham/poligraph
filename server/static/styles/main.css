@@ -167,7 +167,23 @@ h1 {
 }
 
 .about {
-  margin-top: 2em;
   text-align: justify;
   text-justify: inter-word;
 }
+
+.about .questions {
+  margin-top: 1em;
+}
+
+.about .question-group {
+  margin-top: 1em;
+}
+
+.about .question-group .question {
+  font-weight: bold;
+}
+
+.about .question-group .answer {
+
+}
+
